@@ -1,6 +1,6 @@
-import comments from './comments';
-import redux from 'redux';
+import {comments} from './comments.js';
+import {combineReducers} from 'redux';
 
-const app = redux.combineReducers({
+export const reducers = combineReducers({
 	comments
-})
+});

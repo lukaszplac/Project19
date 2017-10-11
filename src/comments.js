@@ -1,29 +1,25 @@
-import actions from './actions';
+import * as a from './actions.js';
 
-let initialState = {
-	comments: [],
-	users: []
-}
-
-function comments(state = initialState, action ) {
-	let newCommentsState = state.comments;
+export function comments(state = [], action ) {
+	let newCommentsState = state;
 	switch (action.type) {
-		case CREATE_COMMENT :
-					return [{
+		case a.CREATE_COMMENT :
+					newCommentsState.unshift({
 						comment: action.comment,
 						id: action.id,
 						votes: 0
-					}, ...state.comments];
-		case EDIT_COMMENT:
+					});
+					return newCommentsState;
+		case a.EDIT_COMMENT:
 					newCommentsState.find(comment => comment.id === action.id).comment = action.comment;
 					return neCommentsState;
-		case REMOVE_COMMENT:
+		case a.REMOVE_COMMENT:
 					newCommentsState = state.comments.filter(comment => comment.id != action.id);
 					return newCommentsState;
-		case THUMB_UP:
+		case a.THUMB_UP:
 					newCommentsState.find(comment => comment.id === action.id).votes += action.votes;
 					return newCommentsState;
-		case THUMB_DOWN:
+		case a.THUMB_DOWN:
 					newCommentsState.find(comment => comment.id === action.id).votes -= action.votes;
 					return newCommentsState;
 		default:
@@ -31,5 +27,3 @@ function comments(state = initialState, action ) {
 
 	}
 }
-
-module.exports = comments;

@@ -6,7 +6,7 @@ export const REMOVE_COMMENT = "REMOVE_COMMENT";
 export const THUMB_UP = "THUMB_UP";
 export const THUMB_DOWN = "THUMB_DOWN";
 
-function addComment(comment) {
+export function addComment(comment) {
 	return {
 		type: CREATE_COMMENT,
 		comment: comment,
@@ -14,7 +14,7 @@ function addComment(comment) {
 	}
 }
 
-function editComment(id, newContent) {
+export function editComment(id, newContent) {
 	return {
 		type: EDIT_COMMENT,
 		comment: newContent,
@@ -22,14 +22,14 @@ function editComment(id, newContent) {
 	}
 }
 
-function removeComment(id) {
+export function removeComment(id) {
 	return {
 		type: REMOVE_COMMENT,
 		id: id
 	}
 }
 
-function thumbUp(id) {
+export function thumbUp(id) {
 	return {
 		type: THUMB_UP,
 		id: id,
@@ -37,18 +37,10 @@ function thumbUp(id) {
 	}
 }
 
-function thumbDown(id) {
+export function thumbDown(id) {
 	return {
 		type: THUMB_DOWN,
 		id: id,
 		votes: 1
 	}
-}
-
-
-module.exports = {
-	editComment: editComment,
-	removeComment: removeComment,
-	thumbUp: thumbUp,
-	thumbDown: thumbDown
 }

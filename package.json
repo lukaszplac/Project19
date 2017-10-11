@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "babel src --out-file ./build/build.js",
-    "start": "node ./build/build.js",
+    "build": "babel src --out-dir build",
+    "start": "node ./build/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -14,7 +14,8 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.0",
-    "nodemon": "^1.12.1"
+    "nodemon": "^1.12.1",
+    "stringify-object": "^3.2.1"
   },
   "dependencies": {
     "redux": "^3.7.2",
