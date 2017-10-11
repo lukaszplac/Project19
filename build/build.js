@@ -114,6 +114,8 @@ function comments() {
 
 			}
 }
+
+module.exports = comments;
 'use strict';
 
 var _comments = require('./comments');
@@ -126,6 +128,7 @@ var _redux2 = _interopRequireDefault(_redux);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+console.log(_comments2.default);
 var app = _redux2.default.combineReducers({
 	comments: _comments2.default
 });

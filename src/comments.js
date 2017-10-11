@@ -31,3 +31,5 @@ function comments(state = initialState, action ) {
 
 	}
 }
+
+module.exports = comments;
